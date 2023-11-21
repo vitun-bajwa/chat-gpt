@@ -1,0 +1,22 @@
+<div class="container">
+    <div class="col-md-12 text-center">
+        <h1>Angular AI Bot</h1>
+        <hr>
+        <ng-container *ngFor="let message of messages">
+            <div class="message" [ngClass]="{'from':message.author === 'bot', 'to':message.author === 'user'}">
+                {{message.content}}
+            </div>
+        </ng-container>
+    </div>
+    <div class="col-md-12 text-center">
+        <label *ngIf="messages.length == 0; else dialogInfo" for="nameField">Your Messages</label>
+        <input [(ngModel)]="value" (keyup.enter)="sendMessage()" type="text" class="form-control">
+        <button class="btn btn-primary top" (click)="sendMessage()">Ask AI</button>
+        <ng-template>
+            <span [className]="'float-right'"></span>
+            <span>
+                Total Messages: {{messages.length}}
+            </span>
+        </ng-template>
+    </div>
+</div>

@@ -7,4 +7,16 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'chat-gpt';
+
+  links = [
+    {
+      path:'/home',label:'home', active:'button-active'
+    },
+    {
+      path:'/chat',label:'chat', active:'button-active'
+    },
+    {
+      path:'/signin',label:'signin', active:'button-active'
+    }
+  ]
 }
